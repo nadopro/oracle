@@ -273,3 +273,25 @@ BEGIN
     );
 END;
 /
+
+
+insert into sample (sample_id, name, department, score) 
+    values (10, '가가가', '컴퓨터공학과', 90), ( );
+
+
+p. 92
+
+BEGIN
+    UPDATE SAMPLE
+       SET SCORE = SCORE + 5
+     WHERE DEPARTMENT = '컴퓨터공학과';
+
+    IF SQL%FOUND THEN
+        DBMS_OUTPUT.PUT_LINE(
+            SQL%ROWCOUNT || '건 수정'
+        );
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('수정 대상 없음');
+    END IF;
+END;
+/
