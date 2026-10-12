@@ -103,3 +103,19 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(V_OUTER);
 END;
 /
+
+
+p. 41
+
+DECLARE
+    V_PRICE  NUMBER := 10000;
+    V_COUNT  NUMBER := 3;
+    V_TOTAL  NUMBER;
+BEGIN
+    V_TOTAL := V_PRICE * V_COUNT;
+
+    DBMS_OUTPUT.PUT_LINE(
+        '합계: ' || V_TOTAL
+    );
+END;
+/
