@@ -1,15 +1,27 @@
-TESThttps://github.com/nadopro/oracle
-TEST
-TESTtest010-1234-5648010-123a-5647010-1111-1111dsfadsaf
-TESTtest010-1234-5648010-123a-5647010-1111-1111dsfadsaf
-TEST강의용
-TEST[가-힣]{2,4}
-TESThttps://naver.me/GFsgHAGE
-TEST
-TESThttps://www.oracle.com/database/free/
-TEST
-TESThttps://www.oracle.com/database/sqldeveloper/technologies/download/
-TEST
-TEST설명
-TEST
-TEST
+https://github.com/nadopro/oracle
+
+test010-1234-5648010-123a-5647010-1111-1111dsfadsaf
+test010-1234-5648010-123a-5647010-1111-1111dsfadsaf
+강의용
+[가-힣]{2,4}
+https://naver.me/GFsgHAGE
+
+https://www.oracle.com/database/free/
+
+https://www.oracle.com/database/sqldeveloper/technologies/download/
+
+설명
+
+CREATE USER KPC
+IDENTIFIED BY kpc1111;
+
+GRANT CREATE SESSION,
+      CREATE TABLE,
+      CREATE VIEW,
+      CREATE SEQUENCE,
+      CREATE PROCEDURE,
+      CREATE TRIGGER
+TO KPC;
+
+ALTER USER KPC
+QUOTA UNLIMITED ON USERS;
