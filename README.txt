@@ -119,3 +119,38 @@ BEGIN
     );
 END;
 /
+
+Neo4j
+
+
+Naming Rule
+
+Snake Expression
+get_user_name
+
+Camel Expression
+getUserName
+
+GET_USER_NAME
+
+
+int i_score, i_age;
+dobule d_score, d_age;
+
+netcraft webserver survey
+
+
+p. 58
+
+DECLARE
+    V_NAME  SAMPLE.NAME%TYPE;
+    V_SCORE SAMPLE.SCORE%TYPE;
+BEGIN
+    SELECT NAME, SCORE
+      INTO V_NAME, V_SCORE
+      FROM SAMPLE
+     WHERE SAMPLE_ID = 1;
+
+    DBMS_OUTPUT.PUT_LINE(V_NAME || ': ' || V_SCORE);
+END;
+/
