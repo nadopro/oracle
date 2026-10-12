@@ -170,3 +170,40 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(V_SAMPLE.SCORE);
 END;
 /
+
+
+
+1.2.3.4
+0001 0010  0011 0100
+1111 1111  1111 0000
+====================
+0001 0010  0011 0000 = 1.2.3.0
+
+
+for(i = 1; i < 10; i++)
+{
+
+}
+
+sum = 0;
+i = 10;
+while(i > 0)
+{
+    sum = sum + i;
+    i--;
+}
+
+
+p. 77
+
+DECLARE
+    V_NUM NUMBER := 1;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(V_NUM);
+        V_NUM := V_NUM + 1;
+
+        EXIT WHEN V_NUM > 5;
+    END LOOP;
+END;
+/
