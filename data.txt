@@ -1,0 +1,15 @@
+insert into users (idx, name, dept, score) values (101','이현준','컴퓨터공학과','64');
+insert into users (idx, name, dept, score) values (102','박근윤','영문학과','67');
+insert into users (idx, name, dept, score) values (103','윤도동','전자공학과','80');
+insert into users (idx, name, dept, score) values (104','이현창','전자공학과','86');
+insert into users (idx, name, dept, score) values (105','서동서','사회학과','85');
+insert into users (idx, name, dept, score) values (106','권근동','컴퓨터공학과','63');
+insert into users (idx, name, dept, score) values (107','윤균근','영문학과','75');
+insert into users (idx, name, dept, score) values (108','송용종','사회학과','61');
+insert into users (idx, name, dept, score) values (109','정계욱','컴퓨터공학과','84');
+insert into users (idx, name, dept, score) values (110','임광신','전자공학과','87');
+insert into users (idx, name, dept, score) values (111','김상윤','사회학과','64');
+insert into users (idx, name, dept, score) values (112','박주순','건축공학과','65');
+insert into users (idx, name, dept, score) values (113','한석봉','사회학과','62');
+insert into users (idx, name, dept, score) values (114','남순세','전자공학과','67');
+insert into users (idx, name, dept, score) values (');
