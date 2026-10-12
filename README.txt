@@ -232,3 +232,44 @@ BEGIN
     END LOOP;
 END;
 /
+
+
+
+
+for(100000)
+    print(i);
+
+for(1억)
+    print(i);
+
+
+
+
+a();
+print("A");
+b();
+print("B");
+c();
+print("C");
+fflush(stdout); // out.flush();
+d();
+print("D");
+e();
+print("E");
+
+A 
+B 
+
+
+p. 90
+
+BEGIN
+    UPDATE SAMPLE
+       SET SCORE = SCORE + 5
+     WHERE DEPARTMENT = '컴퓨터공학과';
+
+    DBMS_OUTPUT.PUT_LINE(
+        SQL%ROWCOUNT || '건 수정되었습니다.'
+    );
+END;
+/
