@@ -62,3 +62,44 @@ VALUES
     (5, '최수진', '문화콘텐츠학과', 88);
 
 COMMIT;
+
+
+connect();
+for()
+    insert()
+close();
+
+
+
+for()
+{
+    connect();
+    insert();
+    close();
+}
+
+
+$id, $pass
+
+$sql = "select * from users where id='$id' and pass='$pass' ";
+id = xxxx' or 2>1 -- 
+$sql = "select * from users where id='xxxx' or 2>1 -- ' and pass='1234' ";
+
+
+p. 40
+
+DECLARE
+    V_OUTER VARCHAR2(20) := '외부 변수';
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(V_OUTER);
+
+    DECLARE
+        V_INNER VARCHAR2(20) := '내부 변수';
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE(V_OUTER);
+        DBMS_OUTPUT.PUT_LINE(V_INNER);
+    END;
+
+    DBMS_OUTPUT.PUT_LINE(V_OUTER);
+END;
+/
