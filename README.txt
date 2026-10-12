@@ -220,3 +220,15 @@ BEGIN
     END LOOP;
 END;
 /
+
+
+p. 82
+
+DECLARE
+    V_NUM NUMBER := 1;
+BEGIN
+    FOR V_NUM IN 1..15 BY 2 LOOP
+        DBMS_OUTPUT.PUT_LINE(V_NUM);
+    END LOOP;
+END;
+/
