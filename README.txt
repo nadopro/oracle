@@ -667,3 +667,55 @@ IS
     RETURN VARCHAR2;
 END PKG_SAMPLE;
 /
+
+
+p. 148
+
+CREATE OR REPLACE PACKAGE BODY PKG_SAMPLE
+IS
+    FUNCTION F_GET_GRADE
+    (
+        P_SCORE IN NUMBER
+    )
+    RETURN VARCHAR2
+    IS
+    BEGIN
+        IF P_SCORE >= 90 THEN
+            RETURN 'A';
+        ELSIF P_SCORE >= 80 THEN
+            RETURN 'B';
+        ELSIF P_SCORE >= 70 THEN
+            RETURN 'C';
+        ELSIF P_SCORE >= 60 THEN
+            RETURN 'D';
+        ELSE
+            RETURN 'F';
+        END IF;
+    END F_GET_GRADE;
+
+    PROCEDURE P_PRINT_SCORE
+    (
+        P_ID IN SAMPLE.SAMPLE_ID%TYPE
+    )
+    IS
+        V_NAME  SAMPLE.NAME%TYPE;
+        V_SCORE SAMPLE.SCORE%TYPE;
+    BEGIN
+        SELECT NAME, SCORE
+          INTO V_NAME, V_SCORE
+          FROM SAMPLE
+         WHERE SAMPLE_ID = P_ID;
+
+        DBMS_OUTPUT.PUT_LINE(
+            V_NAME || ' : ' ||
+            V_SCORE || '점 / ' ||
+            F_GET_GRADE(V_SCORE) || '등급'
+        );
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE(
+                '해당 학생이 없습니다.'
+            );
+    END P_PRINT_SCORE;
+END PKG_SAMPLE;
+/
