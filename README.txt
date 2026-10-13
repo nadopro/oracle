@@ -365,3 +365,51 @@ BEGIN
     CLOSE C_SAMPLE;
 END;
 /
+
+
+FOR I IN 1..5 LOOP
+
+END LOOP;
+
+다음과 같이 정의된 스키마가 있어.
+CREATE TABLE SAMPLE (
+    SAMPLE_ID  NUMBER PRIMARY KEY,
+    NAME       VARCHAR2(30) NOT NULL,
+    DEPARTMENT      VARCHAR2(30),
+    SCORE      NUMBER(3),
+    REG_DATE   DATE DEFAULT SYSDATE
+);
+
+이 스키마를 사용할거니까, 이 스키마를 기억해 놔.
+
+C_MY_CURSOR를 정의하는데,
+DEPARTMENT가 컴퓨터공학과 인 사람의 상위 30명을 가져오도록 정의하고,
+FOR LOOP를 이용해서 NAME, SCORE를 출력하는 PL/SQL을 만들어줘.
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    CURSOR C_MY_CURSOR IS
+        SELECT NAME, SCORE
+          FROM SAMPLE
+         WHERE DEPARTMENT = '컴퓨터공학과'
+         ORDER BY SCORE DESC, SAMPLE_ID ASC
+         FETCH FIRST 30 ROWS ONLY;
+
+BEGIN
+    FOR V_ROW IN C_MY_CURSOR LOOP
+
+        DBMS_OUTPUT.PUT_LINE(
+            V_ROW.NAME || ' : ' || V_ROW.SCORE
+        );
+
+    END LOOP;
+END;
+/
+
+
+MySQL/MariaDB
+
+LIMIT 10; -- LIMIT 0, 10
+
+LIMIT 5, 10
