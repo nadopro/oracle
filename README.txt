@@ -329,3 +329,39 @@ dice.php 파일을 만들어 줘.
 $dice[3] 을 증가시키면 3이 몇회 발생했는지 알수 있어.
 실행이 끝나면 $dice[1] ~ $idce[6]까지 몇 회씩 출현했는지 출력해줘.
 그 다음에 구글 차트의 꺾은선 그래프로 분포를 그려줘.
+
+
+$result = query($sql);
+
+if($result)
+    print("success");
+ELSE
+    print("fail");
+
+p. 100
+
+DECLARE
+    CURSOR C_SAMPLE IS
+        SELECT NAME, SCORE
+          FROM SAMPLE
+	  ORDER BY NAME ASC;
+
+    V_NAME  SAMPLE.NAME%TYPE;
+    V_SCORE SAMPLE.SCORE%TYPE;
+BEGIN
+    OPEN C_SAMPLE;
+
+    LOOP
+        FETCH C_SAMPLE
+         INTO V_NAME, V_SCORE;
+
+        EXIT WHEN C_SAMPLE%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE(
+            V_NAME || ' : ' || V_SCORE
+        );
+    END LOOP;
+
+    CLOSE C_SAMPLE;
+END;
+/
