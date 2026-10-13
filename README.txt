@@ -437,3 +437,20 @@ BEGIN
     END LOOP;
 END;
 /
+
+p. 104
+
+DECLARE
+    CURSOR C_SAMPLE(P_SCORE NUMBER) IS
+        SELECT NAME, SCORE
+          FROM SAMPLE
+         WHERE SCORE >= P_SCORE;
+BEGIN
+    FOR V_ROW IN C_SAMPLE(80) LOOP
+        DBMS_OUTPUT.PUT_LINE(
+            V_ROW.NAME || ' : ' ||
+            V_ROW.SCORE
+        );
+    END LOOP;
+END;
+/
