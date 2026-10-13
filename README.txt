@@ -413,3 +413,27 @@ MySQL/MariaDB
 LIMIT 10; -- LIMIT 0, 10
 
 LIMIT 5, 10
+
+
+직전에 만든 커서를 변경하고 싶어.
+커서를 사용하지 않고, 
+FOR LOOP 안에서 바로 질의를 하고 싶어.
+PL/SQL 문장을 만들어 줘.
+
+SET SERVEROUTPUT ON;
+
+BEGIN
+    FOR V_ROW IN (
+        SELECT NAME, SCORE
+          FROM SAMPLE
+         WHERE DEPARTMENT = '컴퓨터공학과'
+         ORDER BY SCORE DESC, SAMPLE_ID ASC
+         FETCH FIRST 30 ROWS ONLY
+    )
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(
+            V_ROW.NAME || ' : ' || V_ROW.SCORE
+        );
+    END LOOP;
+END;
+/
