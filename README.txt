@@ -776,3 +776,9 @@ BEGIN
     );
 END;
 /
+
+
+update sample set score='99' where sample_id='1';
+select * from SAMPLE_SCORE_LOG;
+
+update sample set score = score + 5 where department='컴퓨터공학과';
