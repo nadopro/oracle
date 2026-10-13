@@ -32,7 +32,7 @@ $startId = filter_input(INPUT_POST, 'start_id', FILTER_VALIDATE_INT);
 $count = ($count !== false && $count !== null) ? $count : 20;
 $startId = ($startId !== false && $startId !== null) ? $startId : 101;
 
-$count = max(1, min($count, 1000));
+$count = max(1, min($count, 100000));
 $startId = max(1, $startId);
 
 $rows = [];
@@ -76,7 +76,7 @@ function e(string|int $value): string
                 <div class="col-md-4">
                     <label for="count" class="form-label">생성 횟수</label>
                     <input type="number" class="form-control" id="count" name="count"
-                           min="1" max="1000" value="<?= e($count) ?>" required>
+                           min="1" max="100000" value="<?= e($count) ?>" required>
                 </div>
                 <div class="col-md-4">
                     <label for="start_id" class="form-label">ID 시작 번호</label>
