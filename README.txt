@@ -454,3 +454,75 @@ BEGIN
     END LOOP;
 END;
 /
+
+
+search_update.php 파일을 만들고 싶어.
+php를 위해 mysql은 다음과 같이 정의했어.
+CREATE TABLE SAMPLE (
+    SAMPLE_ID  int PRIMARY KEY,
+    NAME       char(30) NOT NULL,
+    DEPARTMENT     char(30),
+    SCORE      int(3),
+    REG_DATE   DATE
+);
+
+db name : kpc 
+db user : kpc
+db pass : 1111
+이야. 상단에 점수와 학과를 입력받고, "실행"버튼을 누르면
+입력된 점수 이상의 데이터를 모두 조회해서 출력해 줘.
+또, 각 출력에 해당하는 인물의 학과를 입력된 학과로 변경해 줘.
+
+
+while(1) -- True
+{
+    sleep(1); // sleep(1000)
+    print("Hello");
+}
+
+
+
+int main()
+{
+    if(my_func() <0)
+    {
+
+        print("Error");
+    }
+
+}
+
+
+my_func(a, *b, c)
+{
+    // param check
+    error = "";
+    if(error)
+        print("param error");
+        error = "param error";
+        goto error_processing;
+        
+    // error
+    error = "param 2 error";
+    goto error_processing;
+    // erro
+
+    error = "processing error";
+
+    print("%s", b);
+    return 1;
+error_processing:
+    printf("%s Error", error);
+    return -1;
+}
+
+
+create table mytable (
+    id  varchar2(30) unique ,
+    name varchar2(20),
+    age number default '10'
+);
+insert into mytable (id, name) values ('test', '홍길동');
+insert into mytable (id, name) values ('test', '홍길동');
+
+insert into mytable (id, name, age) values ('test', '홍길동', '열살');
