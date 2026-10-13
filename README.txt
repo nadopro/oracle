@@ -719,3 +719,35 @@ IS
     END P_PRINT_SCORE;
 END PKG_SAMPLE;
 /
+
+
+연관배열 : Associative Array
+dict[0] = "apple";
+dict[1] = "desk";
+dict[2] = "test";
+
+
+dict["apple"] = "사과";
+dict["desk"] = "책상";
+
+
+mytable / a, (k), b, c, d, E
+$sql = "select count(*) as mycount from sample";
+$sql = select * from mytable
+while(data = fetch())
+{
+    // data[0], data[1],  data[2], data[3], data[4], data[5]
+
+    data["mycount"] , data["k"], data["b"], data["c"], data["d"]
+}
+
+
+p. 156
+
+CREATE TABLE SAMPLE_SCORE_LOG
+(
+    SAMPLE_ID  NUMBER,
+    OLD_SCORE  NUMBER,
+    NEW_SCORE  NUMBER,
+    CHANGE_DATE DATE
+);
