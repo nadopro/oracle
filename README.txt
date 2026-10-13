@@ -594,3 +594,15 @@ END;
 
 
 p. 136B
+
+DECLARE
+    V_NAME  SAMPLE.NAME%TYPE;
+    V_SCORE SAMPLE.SCORE%TYPE;
+BEGIN
+    P_GET_SCORE(1, V_NAME, V_SCORE);
+
+    DBMS_OUTPUT.PUT_LINE(
+        V_NAME || ' : ' || V_SCORE
+    );
+END;
+/
