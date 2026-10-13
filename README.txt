@@ -629,3 +629,23 @@ BEGIN
     END IF;
 END;
 /
+
+
+p. 143
+
+DECLARE
+    V_GRADE VARCHAR2(1);
+BEGIN
+    V_GRADE := F_GET_GRADE(85);
+
+    DBMS_OUTPUT.PUT_LINE(
+        '등급 : ' || V_GRADE
+    );
+END;
+/
+
+p.143B
+SELECT NAME,
+       SCORE,
+       F_GET_GRADE(SCORE) AS GRADE
+FROM SAMPLE;
