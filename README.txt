@@ -606,3 +606,26 @@ BEGIN
     );
 END;
 /
+
+p. 142
+
+CREATE OR REPLACE FUNCTION F_GET_GRADE
+(
+    P_SCORE IN NUMBER
+)
+RETURN VARCHAR2
+IS
+BEGIN
+    IF P_SCORE >= 90 THEN
+        RETURN 'A';
+    ELSIF P_SCORE >= 80 THEN
+        RETURN 'B';
+    ELSIF P_SCORE >= 70 THEN
+        RETURN 'C';
+    ELSIF P_SCORE >= 60 THEN
+        RETURN 'D';
+    ELSE
+        RETURN 'F';
+    END IF;
+END;
+/
