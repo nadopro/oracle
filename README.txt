@@ -526,3 +526,51 @@ insert into mytable (id, name) values ('test', '홍길동');
 insert into mytable (id, name) values ('test', '홍길동');
 
 insert into mytable (id, name, age) values ('test', '홍길동', '열살');
+
+
+
+BAD_REQUEST = 400,
+FORBIDDEN = 403,
+NOT_FOUND,
+METHOD_NOT_ALLOWED,
+
+int main()
+{
+    start = 3;
+    test(start);
+
+    print(start); // 4
+}
+
+
+void test(int &a)
+{
+    a = a +1;
+}
+
+
+p. 133
+
+CREATE OR REPLACE PROCEDURE P_PRINT_SCORE
+(
+    P_ID IN SAMPLE.SAMPLE_ID%TYPE
+)
+IS
+    V_NAME  SAMPLE.NAME%TYPE;
+    V_SCORE SAMPLE.SCORE%TYPE;
+BEGIN
+    SELECT NAME, SCORE
+      INTO V_NAME, V_SCORE
+      FROM SAMPLE
+     WHERE SAMPLE_ID = P_ID;
+
+    DBMS_OUTPUT.PUT_LINE(
+        V_NAME || ' : ' || V_SCORE
+    );
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE(
+            '해당 학생이 없습니다.'
+        );
+END;
+/
